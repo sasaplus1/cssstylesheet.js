@@ -9,5 +9,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/sasaplus1/cssstylesheet.js.git"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "webpack": "^1.12.14"
   }
 }
