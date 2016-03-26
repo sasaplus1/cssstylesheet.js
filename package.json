@@ -1,0 +1,13 @@
+{
+  "name": "cssstylesheet",
+  "version": "0.0.0",
+  "author": "sasa+1 <sasaplus1@gmail.com>",
+  "description": "cross browser CSSStyleSheet",
+  "main": "./index.js",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sasaplus1/cssstylesheet.js.git"
+  }
+}
