@@ -1,0 +1,29 @@
+{
+  "name": "cssstylesheet",
+  "version": "0.1.0",
+  "author": "sasa+1 <sasaplus1@gmail.com>",
+  "description": "cross browser CSSStyleSheet",
+  "main": "./index.js",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sasaplus1/cssstylesheet.js.git"
+  },
+  "scripts": {
+    "build": "npm ru clean && npm ru compile && npm ru minify",
+    "clean": "npm ru rimraf -- ./build",
+    "compile": "npm ru webpack -- --output-filename ./build/cssstylesheet.js",
+    "develop": "parallelshell 'npm ru compile -- -w' 'npm ru minify -- -w'",
+    "minify": "npm ru webpack -- --optimize-minimize --output-filename ./build/cssstylesheet.min.js",
+    "prepublish": "npm ru build",
+    "rimraf": "rimraf",
+    "webpack": "webpack --colors --display-error-details --progress"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "parallelshell": "^2.0.0",
+    "rimraf": "^2.5.2",
+    "webpack": "^1.12.14"
+  }
+}
