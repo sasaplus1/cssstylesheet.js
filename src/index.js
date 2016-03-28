@@ -3,7 +3,9 @@
 var head = document.getElementsByTagName('head')[0],
     cssss = window.CSSStyleSheet;
 
-var CSSStyleSheet;
+var cssRulesName = ('cssRules' in cssss.prototype) ? 'cssRules' : 'rules';
+
+var CSSStyleSheet, cssRulesName;
 
 if ('createStyleSheet' in document) {
   /**
@@ -12,11 +14,8 @@ if ('createStyleSheet' in document) {
    * @constructor
    */
   CSSStyleSheet = function CSSStyleSheet() {
-    this._element = document.createStyleSheet();
-
-    head.appendChild(this._element);
-
-    this._sheet = this._element.sheet;
+    this._element = null;
+    this._sheet = document.createStyleSheet();
   };
 } else {
   /**
@@ -38,7 +37,7 @@ if ('createStyleSheet' in document) {
   };
 }
 
-CSSStyleSheet.prototype.insertRule = ('insertRule' in cssss) ?
+CSSStyleSheet.prototype.insertRule = ('insertRule' in cssss.prototype) ?
   /**
    * insert rule for modern browsers
    *
@@ -62,7 +61,7 @@ CSSStyleSheet.prototype.insertRule = ('insertRule' in cssss) ?
     return this._sheet.addRule(selector, ruleText, index);
   };
 
-CSSStyleSheet.prototype.deleteRule = ('deleteRule' in cssss) ?
+CSSStyleSheet.prototype.deleteRule = ('deleteRule' in cssss.prototype) ?
   /**
    * delete rule for modern browsers
    *
@@ -88,7 +87,7 @@ CSSStyleSheet.prototype.deleteRule = ('deleteRule' in cssss) ?
  * @return {Number}
  */
 CSSStyleSheet.prototype.addRule = function addRule(selector, ruleText) {
-  var length = this._sheet.rules.length;
+  var length = this._sheet[cssRulesName].length;
 
   return this.insertRule(selector, ruleText, length);
 };
@@ -97,7 +96,7 @@ CSSStyleSheet.prototype.addRule = function addRule(selector, ruleText) {
  * delete all rule
  */
 CSSStyleSheet.prototype.clearRule = function clearRule() {
-  var i = this._sheet.rules.length;
+  var i = this._sheet[cssRulesName].length;
 
   while (i--) {
     this.deleteRule(i);
@@ -109,7 +108,7 @@ CSSStyleSheet.prototype.clearRule = function clearRule() {
 /**
  * get style element
  *
- * @return {HTMLStyleElement}
+ * @return {Null|HTMLStyleElement}
  */
 CSSStyleSheet.prototype.getElement = function getElement() {
   return this._element;
@@ -123,6 +122,15 @@ CSSStyleSheet.prototype.getElement = function getElement() {
 CSSStyleSheet.prototype.getSheet = function getSheet() {
   return this._sheet;
 };
+
+/**
+ * get rules
+ *
+ * @return {CSSRuleList}
+ */
+CSSStyleSheet.prototype.getRules = function getRules() {
+  return this._sheet[cssRulesName];
+}
 
 //------------------------------------------------------------------------------
 
