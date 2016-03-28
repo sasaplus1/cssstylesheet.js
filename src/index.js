@@ -37,7 +37,7 @@ if ('createStyleSheet' in document) {
   };
 }
 
-CSSStyleSheet.prototype.insertRule = ('insertRule' in cssss) ?
+CSSStyleSheet.prototype.insertRule = ('insertRule' in cssss.prototype) ?
   /**
    * insert rule for modern browsers
    *
@@ -61,7 +61,7 @@ CSSStyleSheet.prototype.insertRule = ('insertRule' in cssss) ?
     return this._sheet.addRule(selector, ruleText, index);
   };
 
-CSSStyleSheet.prototype.deleteRule = ('deleteRule' in cssss) ?
+CSSStyleSheet.prototype.deleteRule = ('deleteRule' in cssss.prototype) ?
   /**
    * delete rule for modern browsers
    *
