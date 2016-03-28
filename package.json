@@ -15,9 +15,11 @@
     "clean": "npm ru rimraf -- ./build",
     "compile": "npm ru webpack -- --output-filename ./build/cssstylesheet.js",
     "develop": "parallelshell 'npm ru compile -- -w' 'npm ru minify -- -w'",
+    "karma": "karma start --colors",
     "minify": "npm ru webpack -- --optimize-minimize --output-filename ./build/cssstylesheet.min.js",
     "prepublish": "npm ru build",
     "rimraf": "rimraf",
+    "test": "npm ru karma -- --single-run --browsers Firefox,Chrome,Safari",
     "webpack": "webpack --colors --display-error-details --progress"
   },
   "devDependencies": {
