@@ -15,11 +15,8 @@ if ('createStyleSheet' in document) {
    * @constructor
    */
   CSSStyleSheet = function CSSStyleSheet() {
-    this._element = document.createStyleSheet();
-
-    head.appendChild(this._element);
-
-    this._sheet = this._element.sheet;
+    this._element = null;
+    this._sheet = document.createStyleSheet();
   };
 } else {
   /**
