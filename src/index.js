@@ -3,8 +3,7 @@
 var head = document.getElementsByTagName('head')[0],
     cssss = window.CSSStyleSheet;
 
-var cssRulesName =
-  ('cssRules' in window.CSSStyleSheet.prototype) ? 'cssRules' : 'rules';
+var cssRulesName = ('cssRules' in cssss.prototype) ? 'cssRules' : 'rules';
 
 var CSSStyleSheet, cssRulesName;
 
