@@ -123,6 +123,15 @@ CSSStyleSheet.prototype.getSheet = function getSheet() {
   return this._sheet;
 };
 
+/**
+ * get rules
+ *
+ * @return {CSSRuleList}
+ */
+CSSStyleSheet.prototype.getRules = function getRules() {
+  return this._sheet[cssRulesName];
+}
+
 //------------------------------------------------------------------------------
 
 /**
