@@ -108,7 +108,7 @@ CSSStyleSheet.prototype.clearRule = function clearRule() {
 /**
  * get style element
  *
- * @return {HTMLStyleElement}
+ * @return {Null|HTMLStyleElement}
  */
 CSSStyleSheet.prototype.getElement = function getElement() {
   return this._element;
