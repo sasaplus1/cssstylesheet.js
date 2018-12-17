@@ -41,10 +41,10 @@ CSSStyleSheet.prototype.insertRule =
     ? /**
        * insert rule for modern browsers
        *
-       * @param {String} selector
-       * @param {String} ruleText
-       * @param {Number} index
-       * @return {Number}
+       * @param {string} selector
+       * @param {string} ruleText
+       * @param {number} index
+       * @return {number}
        */
       function insertRule(selector, ruleText, index) {
         return this._sheet.insertRule(selector + '{' + ruleText + '}', index);
@@ -52,10 +52,10 @@ CSSStyleSheet.prototype.insertRule =
     : /**
        * insert rule for old IE
        *
-       * @param {String} selector
-       * @param {String} ruleText
-       * @param {Number} index
-       * @return {Number}
+       * @param {string} selector
+       * @param {string} ruleText
+       * @param {number} index
+       * @return {number}
        */
       function insertRule(selector, ruleText, index) {
         return this._sheet.addRule(selector, ruleText, index);
@@ -64,7 +64,7 @@ CSSStyleSheet.prototype.insertRule =
 /**
  * delete rule for modern browsers
  *
- * @return {Undefined}
+ * @return {undefined}
  */
 CSSStyleSheet.prototype.deleteRule = function deleteRule(index) {
   return this._sheet[cssDeleteRuleName](index);
@@ -73,9 +73,9 @@ CSSStyleSheet.prototype.deleteRule = function deleteRule(index) {
 /**
  * insert rule at last
  *
- * @param {String} selector
- * @param {String} ruleText
- * @return {Number}
+ * @param {string} selector
+ * @param {string} ruleText
+ * @return {number}
  */
 CSSStyleSheet.prototype.addRule = function addRule(selector, ruleText) {
   const length = this._sheet[cssRulesName].length;
@@ -97,7 +97,7 @@ CSSStyleSheet.prototype.clearRule = function clearRule() {
 /**
  * get style element
  *
- * @return {Null|HTMLStyleElement}
+ * @return {HTMLStyleElement?}
  */
 CSSStyleSheet.prototype.getElement = function getElement() {
   return this._element;
