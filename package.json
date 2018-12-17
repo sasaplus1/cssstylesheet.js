@@ -15,6 +15,7 @@
     "clean": "npm ru rimraf -- ./build",
     "compile": "npm ru webpack -- --output-filename ./build/cssstylesheet.js",
     "develop": "parallelshell 'npm ru compile -- -w' 'npm ru minify -- -w'",
+    "fixpack": "npx fixpack",
     "karma": "karma start --colors",
     "minify": "npm ru webpack -- --optimize-minimize --output-filename ./build/cssstylesheet.min.js",
     "prepublish": "npm ru build",
