@@ -33,17 +33,14 @@
   "scripts": {
     "build": "npm run clean && npm run compile && npm run minify",
     "clean": "npm run rimraf -- ./build",
-    "compile": "npm run webpack -- --output-filename ./build/cssstylesheet.js",
     "develop": "parallelshell 'npm run compile -- -w' 'npm run minify -- -w'",
     "fix": "eslint --ext .js,.mjs --fix .",
     "fixpack": "npx fixpack",
     "karma": "karma start --colors",
     "lint": "eslint --ext .js,.mjs .",
-    "minify": "npm run webpack -- --optimize-minimize --output-filename ./build/cssstylesheet.min.js",
     "prepublish": "npm run build",
     "rimraf": "rimraf",
-    "test": "npm run karma -- --single-run --browsers Firefox,Chrome,Safari",
-    "webpack": "webpack --colors --display-error-details --progress"
+    "test": "npm run karma -- --single-run --browsers Firefox,Chrome,Safari"
   },
   "sideEffects": false
 }
