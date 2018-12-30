@@ -1,38 +1,57 @@
 {
   "name": "cssstylesheet",
-  "version": "0.2.0",
-  "author": "sasa+1 <sasaplus1@gmail.com>",
   "description": "cross browser CSSStyleSheet",
-  "main": "./index.js",
+  "version": "1.0.0",
+  "author": "sasa+1 <sasaplus1@gmail.com>",
+  "browser": "./umd/cssstylesheet.js",
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-espower": "^3.0.0",
+    "babel-plugin-transform-rename-import": "^2.3.0",
+    "eslint": "^5.10.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.2.1",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-rollup-preprocessor": "^6.1.1",
+    "karma-safari-launcher": "^1.0.0",
+    "lint-staged": "^8.1.0",
+    "mocha": "^5.2.0",
+    "power-assert": "^1.3.1",
+    "prettier": "^1.15.3",
+    "rollup": "^0.68.0",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "^3.0.0"
+  },
+  "files": [
+    "*.mjs",
+    "src/*.mjs",
+    "umd/*.js",
+    "umd/*.map"
+  ],
   "license": "MIT",
+  "module": "./index.mjs",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sasaplus1/cssstylesheet.js.git"
+    "url": "https://github.com/sasaplus1/cssstylesheet.js.git"
   },
   "scripts": {
-    "build": "npm ru clean && npm ru compile && npm ru minify",
-    "clean": "npm ru rimraf -- ./build",
-    "compile": "npm ru webpack -- --output-filename ./build/cssstylesheet.js",
-    "develop": "parallelshell 'npm ru compile -- -w' 'npm ru minify -- -w'",
-    "karma": "karma start --colors",
-    "minify": "npm ru webpack -- --optimize-minimize --output-filename ./build/cssstylesheet.min.js",
-    "prepublish": "npm ru build",
-    "rimraf": "rimraf",
-    "test": "npm ru karma -- --single-run --browsers Firefox,Chrome,Safari",
-    "webpack": "webpack --colors --display-error-details --progress"
+    "build": "BABEL_ENV=umd rollup -c",
+    "clean": "npx rimraf ./umd",
+    "fix": "eslint --ext .js,.mjs --fix .",
+    "fixpack": "npx fixpack",
+    "lint": "eslint --ext .js,.mjs .",
+    "test": "BABEL_ENV=test karma start --single-run",
+    "travis": "BABEL_ENV=test karma start --single-run --browsers ${BROWSERS}"
   },
-  "devDependencies": {
-    "coffee-script": "^1.10.0",
-    "karma": "^0.13.22",
-    "karma-chrome-launcher": "^0.2.3",
-    "karma-espower-preprocessor": "0.0.4",
-    "karma-firefox-launcher": "^0.1.7",
-    "karma-mocha": "^0.2.2",
-    "karma-safari-launcher": "^0.1.1",
-    "parallelshell": "^2.0.0",
-    "power-assert": "^1.3.1",
-    "rimraf": "^2.5.2",
-    "webpack": "^1.12.14"
-  }
+  "sideEffects": false
 }
