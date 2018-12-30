@@ -10,7 +10,7 @@ module.exports = {
       env: {
         mocha: true
       },
-      files: ['**/*_test.mjs']
+      files: ['test/**/*.mjs']
     },
     {
       files: ['.runkit.js'],
