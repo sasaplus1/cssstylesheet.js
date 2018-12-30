@@ -1,8 +1,6 @@
 module.exports = {
   env: {
-    browser: true,
-    commonjs: true,
-    es6: true
+    browser: true
   },
   extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   overrides: [
@@ -13,10 +11,11 @@ module.exports = {
       files: ['test/**/*.mjs']
     },
     {
-      files: ['.runkit.js'],
-      rules: {
-        'no-console': 'off'
-      }
+      env: {
+        node: true,
+        es6: true
+      },
+      files: ['*.js', '.*.js']
     }
   ],
   parser: 'babel-eslint',
