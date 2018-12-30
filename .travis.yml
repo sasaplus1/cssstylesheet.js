@@ -14,11 +14,21 @@ matrix:
       sudo: false
       addons:
         chrome: stable
+      node_js:
+        - "lts/*"
+      env:
+        - BROWSERS=ChromeHeadlessNoSandbox
+      script:
+        - npm run travis
+    - os: linux
+      dist: xenial
+      sudo: false
+      addons:
         firefox: latest
       node_js:
         - "lts/*"
       env:
-        - BROWSERS=ChromeHeadlessNoSandbox,FirefoxHeadless
+        - BROWSERS=FirefoxHeadless
       script:
         - npm run travis
     - os: osx
