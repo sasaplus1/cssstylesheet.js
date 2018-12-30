@@ -31,6 +31,12 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-terser": "^3.0.0"
   },
+  "files": [
+    "*.mjs",
+    "src/*.mjs",
+    "umd/*.js",
+    "umd/*.map"
+  ],
   "license": "MIT",
   "module": "./index.mjs",
   "readmeFilename": "README.md",
