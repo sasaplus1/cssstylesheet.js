@@ -1,5 +1,8 @@
 # cssstylesheet.js
 
+[![Build Status](https://travis-ci.org/sasaplus1/cssstylesheet.js.svg)](https://travis-ci.org/sasaplus1/cssstylesheet.js)
+[![NPM version](https://badge.fury.io/js/cssstylesheet.svg)](http://badge.fury.io/js/cssstylesheet)
+
 cross browser [CSSStyleSheet](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet)
 
 ## Installation
@@ -17,7 +20,7 @@ $ npm install cssstylesheet
 ### Example
 
 ```js
-var sheet = cssstylesheet.create();  // or sheet = new cssstylesheet();
+const sheet = cssstylesheet.create();  // or sheet = new cssstylesheet();
 
 // add css rule
 sheet.addRule('body', 'background-color: #ccccff;');
@@ -81,4 +84,4 @@ create cssstylesheet instance.
 
 ## License
 
-The MIT license. Please see LICENSE file.
+The MIT license.
