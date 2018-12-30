@@ -81,4 +81,7 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+###
 
+# Google Chrome user data directory
+.chrome/
