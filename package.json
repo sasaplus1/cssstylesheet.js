@@ -11,7 +11,7 @@
     "babel-eslint": "10.0.1",
     "babel-plugin-espower": "3.0.1",
     "babel-plugin-transform-rename-import": "2.3.0",
-    "eslint": "5.10.0",
+    "eslint": "5.13.0",
     "eslint-config-prettier": "3.3.0",
     "eslint-plugin-prettier": "3.0.0",
     "husky": "1.2.1",
