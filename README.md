@@ -1,7 +1,8 @@
 # cssstylesheet.js
 
 [![Build Status](https://travis-ci.org/sasaplus1/cssstylesheet.js.svg)](https://travis-ci.org/sasaplus1/cssstylesheet.js)
-[![NPM version](https://badge.fury.io/js/cssstylesheet.svg)](http://badge.fury.io/js/cssstylesheet)
+[![npm version](https://badge.fury.io/js/cssstylesheet.svg)](http://badge.fury.io/js/cssstylesheet)
+[![renovate](https://badges.renovateapi.com/github/sasaplus1/cssstylesheet.js)](https://renovatebot.com)
 
 cross browser [CSSStyleSheet](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet)
 
