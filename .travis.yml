@@ -1,21 +1,23 @@
+os: linux
+
+dist: xenial
+
+sudo: false
+
 language: node_js
+
+node_js:
+  - 'lts/*'
 
 matrix:
   include:
     - os: linux
       dist: xenial
       sudo: false
-      node_js:
-        - "lts/*"
-      script:
-        - npm run lint
-    - os: linux
-      dist: xenial
-      sudo: false
       addons:
         chrome: stable
       node_js:
-        - "lts/*"
+        - 'lts/*'
       env:
         - BROWSERS=ChromeHeadlessNoSandbox
       script:
@@ -26,7 +28,7 @@ matrix:
       addons:
         firefox: latest
       node_js:
-        - "lts/*"
+        - 'lts/*'
       env:
         - BROWSERS=FirefoxHeadless
       script:
@@ -34,7 +36,7 @@ matrix:
     - os: osx
       osx_image: xcode10.1
       node_js:
-        - "lts/*"
+        - 'lts/*'
       env:
         - BROWSERS=Safari
       script:
@@ -42,7 +44,7 @@ matrix:
     - os: osx
       osx_image: xcode9.2
       node_js:
-        - "lts/*"
+        - 'lts/*'
       env:
         - BROWSERS=Safari
       script:
@@ -53,5 +55,6 @@ git:
 
 cache: npm
 
-notifications:
-  email: false
+script:
+  - npm run lint
+  - npm run build
