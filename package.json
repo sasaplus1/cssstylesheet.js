@@ -6,7 +6,7 @@
   "browser": "./umd/cssstylesheet.js",
   "devDependencies": {
     "@babel/cli": "7.2.3",
-    "@babel/core": "7.2.2",
+    "@babel/core": "7.3.4",
     "@babel/preset-env": "7.3.4",
     "babel-eslint": "10.0.1",
     "babel-plugin-espower": "3.0.1",
