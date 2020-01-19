@@ -8,7 +8,7 @@
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
     "@babel/preset-env": "7.3.4",
-    "babel-eslint": "10.0.2",
+    "babel-eslint": "10.0.3",
     "babel-plugin-espower": "3.0.1",
     "babel-plugin-transform-rename-import": "2.3.0",
     "eslint": "5.14.1",
